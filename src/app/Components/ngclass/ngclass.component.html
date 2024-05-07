@@ -1,0 +1,11 @@
+<h1 style="background-color: aqua; ">This is Simple styling</h1>
+<h2 [ngStyle]="{ 'color':'green' }">This is Gernal Ngstyle</h2>
+<p  [ngStyle]="{ 'color': styleColor }"> This is variable </p>
+<p [ngStyle]="{ 'color': styleColor }">This is click event change the style</p>
+<button class="btn btn-primary" (click)="Changestyle()">Changestyle</button><br>
+<p [ngStyle]="getStyle()">This is getStyle content</p> 
+<h3 [ngClass]="getClass()">This is Get class</h3>
+<p class="" [ngStyle]="{ 'color': newtext ? 'red' : 'black' }">This is toggle event in ng style</p>
+<button class="btn btn-primary" (click)="newtextchange()">Click ME</button>
+
+

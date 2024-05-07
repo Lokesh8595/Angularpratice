@@ -1,0 +1,95 @@
+<!-- <h1>{{Name}}</h1>
+<h2>{{ education}}</h2>
+<button [disabled]="isbtnDisabled">Click me</button>
+<input type="text" (change)="onchange()">
+<h1 class="text-center" style="color: red">this is text center</h1> -->
+
+<input #gr id="green" type="radio" value="g" name="color"  (change)="handleChange('green')">
+<label class="Custom-control-label" for="green">green</label>
+<span style="padding-right: px;"></span>
+<input type="radio" id="blue" value="b" name="color" (change)="handleChange('blue')">
+<label class="Custom-control-label" for="blue" >blue</label>
+
+<br><br>
+<div [ngClass]="isgreen? 'green': 'blue' "></div>
+<br><br>
+<h1 class="text-center h1" [ngClass]="istext==false ? 'h1': 'h2'" >Text color change on click-event</h1>
+<button class="btn btn-danger" (click)="textcolorchange('black')">Click me</button><br><br><br>
+<hr>
+<div class="container text-center mt-3">
+    <h1> backGroundcolor change   &Show and Hide</h1>
+    <div class="row mt-5">
+        <div class="col-lg-4">
+        <div class="card" [ngClass]="[bgColor? 'card':'card1']">
+            <div class="proifile card-img-top"><img src="assets/img/kumarsubrat.png" alt="" ></div>
+            <div class="card-body" >
+                <button class="btn btn-primary mt-3"  (click)="bgcolorchange()">click me </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card" >
+            <div class="proifile card-img-top"><img src="assets/img/kumarsubrat.png" alt="" ></div>
+            <div class="card-body" >
+                <h4 [ngClass]="textshow? 'h4':'h3'">User Name :Akash</h4>
+                <button class="btn btn-primary mt-3"  (click)="showandhide()">Show and Hide </button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<br><hr>
+<div class="container ">
+    <div class="inputs d-flex gap-2">
+        <input type="radio" name="b" id="" (click)="boxbgchnage('blue')">
+        <label for="blue">blue</label>
+        <input type="radio" name="b" id="" (click)="boxbgchnage('red')">
+        <label for="red">red</label>
+       </div>
+    <div class="row text-center">
+        <div class="col-6">
+            <div class="box1 align-content-center" [ngClass]="box? 'box1':'box2'">
+                <h1>box</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+        <p class="" [ngClass]="{'p': newtext, 'p1' : !newtext}">This is NgClass for changing css Propert</p>
+        <button class="btn btn-primary" (click)="newtextchange()">Click ME</button>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-8" style="font-size:12px">
+            <p class="" [ngClass]="getClass()">  Lokesh Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sapiente fuga itaque eaque enim. Sint!</p>
+           <p [ngClass]="getClass()">Hello this is get class second</p>
+    </div>
+    </div>
+</div><br><br>
+<hr>
+<!-------------------------------------------------Add class-static  ------------------------------------------->
+<h1>Add ngclass static and dynamic</h1>
+<div [ngClass]="'class1 class2 class3'">
+    <h1>hello this is static way</h1>
+</div>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <p class="" style="color:red">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sapiente fuga itaque eaque enim. Sint!</p>
+        <p class="" [ngStyle]="{ 'color':'green' }">Lorem ipsum dolor sit amet. Geenral!</p><br>
+    <p class="" [ngStyle]="{ 'color': styleColor }">with style variable</p>
+    <button class="btn btn-primary" (click)="changeStyle()">Change Style</button>
+    <p class="" [ngStyle]="getStyle()">This is from getStyle!</p>
+    <button class="btn btn-primary" (click)="newtextchange()">Click ME</button>
+    <p class="" [ngStyle]="{ 'color': newtext ? '#fff' : 'black' }">with style variable</p>
+    </div>
+</div>
+<!-- <h1 class="text-center" [ngStyle]="{'background-color': 'red','font-size':'45px','color':'white'}">This is ng style in angular</h1> -->
+<!------------------------------------------- this is  static method to add style ------------------------------->
+<h1 [style.background]="'blue'">Hello this is  static style</h1>
+<!-- this is dynamic method to add style -->
+<h1 [style.color]="'green'"> Hello this is Dyanmic style</h1>
+<!-- NgClass and ngStyle -->
